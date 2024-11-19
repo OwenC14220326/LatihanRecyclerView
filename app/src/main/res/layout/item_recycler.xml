@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
     <ImageView
         android:id="@+id/ivGambarWayang"
         android:layout_width="124dp"
@@ -18,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_foreground" />
+
 
     <TextView
         android:id="@+id/tvNamaWayang"
@@ -33,6 +35,7 @@
         app:layout_constraintStart_toEndOf="@+id/ivGambarWayang"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/tvKarakterWayang"
         android:layout_width="wrap_content"
@@ -44,17 +47,32 @@
         app:layout_constraintStart_toStartOf="@+id/tvNamaWayang"
         app:layout_constraintTop_toBottomOf="@+id/tvNamaWayang" />
 
+
     <TextView
         android:id="@+id/tvDeskripsiWayang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:ellipsize="none"
+        android:maxLines="3"
         android:text="deskripsiWayang"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvKarakterWayang"
         app:layout_constraintTop_toBottomOf="@+id/tvKarakterWayang" />
+
+
+    <Button
+        android:id="@+id/btnHapus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hapus Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDeskripsiWayang" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

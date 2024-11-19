@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -21,6 +22,7 @@ class adapterRecView (private val listWayang: ArrayList<wayang>) : RecyclerView
         var _karakterWayanag = itemView.findViewById<TextView>(R.id.tvKarakterWayang)
         var _deskripsiWayang = itemView.findViewById<TextView>(R.id.tvDeskripsiWayang)
         var _gambarWayang = itemView.findViewById<ImageView>(R.id.ivGambarWayang)
+        var _btnHapus = itemView.findViewById<Button>(R.id.btnHapus)
     }
 
 
@@ -29,6 +31,7 @@ class adapterRecView (private val listWayang: ArrayList<wayang>) : RecyclerView
 
     interface OnItemClickCallback {
         fun onItemClicked(data:wayang)
+        fun delData(pos:Int)
     }
 
 
@@ -59,6 +62,11 @@ class adapterRecView (private val listWayang: ArrayList<wayang>) : RecyclerView
 //            Toast.makeText(holder.itemView.context, wayang.nama, Toast.LENGTH_LONG).show()
             onItemClickCallback.onItemClicked(listWayang[position])
         }
+
+
+        holder._btnHapus.setOnClickListener {
+            onItemClickCallback.delData(position)
+        }
     }
 
 
@@ -66,4 +74,3 @@ class adapterRecView (private val listWayang: ArrayList<wayang>) : RecyclerView
         return listWayang.size
     }
 }
-
