@@ -137,6 +137,7 @@ class MainActivity : AppCompatActivity() {
             arWayang.clear()
         }
         sp = getSharedPreferences("dataSP", MODE_PRIVATE)
+
         TambahData()
         TampilkanData()
 
